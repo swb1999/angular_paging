@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-cloak class="ng-cloak">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body ng-controller="myController">
+    <ul class="nav-list">
+        <li ng-click="sub(currentPage-1 < 1 ? 1 : currentPage-1)">&laquo;</li>
+        <li ng-style="{'background':currentPage==1 ? 'orange' : ''}" ng-if="currentPage >= pageNum && lastPage !== pageNum" ng-click="sub(1)">1</li>
+        <li ng-if="currentPage >= pageNum">···</li>
+        <li ng-repeat="val in pages" ng-click="sub(val)" ng-style="{'background':currentPage==val ? 'orange' : ''}">{{val}}</li>
+        <li ng-if="firstPage <= lastPage - pageNum">···</li>
+        <li ng-style="{'background':currentPage==lastPage ? 'orange' : ''}" ng-if="lastPage > pageNum && firstPage <= lastPage - pageNum" ng-click="sub(lastPage)">{{lastPage}}</li>
+        <li ng-click="sub(currentPage+1 > lastPage ? lastPage : currentPage+1)">&raquo;</li>
+    </ul>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/controller.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    user-select: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.nav-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-list>li {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.nav-list>li:hover {
+    background: #eee;
+}
+
+.nav-list>li:first-of-type {
+    border-left: 1px solid #ccc;
+}
+
+.ng-cloak {
+    display: none;
+}
